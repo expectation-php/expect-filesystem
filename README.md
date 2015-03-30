@@ -9,11 +9,26 @@ expect-filesystem
 Basic usage
 ------------------------------------
 
+Create a configuration file of **expect**.
+The format of the file is [toml](https://github.com/toml-lang/toml).
+
+```toml
+#
+# Expect configuration
+#
+
+packages = [
+  "expect\\filesystem\\FileSystem"
+]
+```
+
+Load the configuration file that you created.
+
 ```php
 use expect\Expect;
 use expect\configurator\FileConfigurator;
 
-$configurator = new FileConfigurator(__DIR__ . '/config.toml');
+$configurator = new FileConfigurator(__DIR__ . '/.expect.toml');
 Expect::configure($configurator);
 
 Expect::that('log.txt')->toBeExists(); //pass
