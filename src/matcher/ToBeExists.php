@@ -9,7 +9,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace expect\matcher;
+namespace expect\filesystem\matcher;
 
 use expect\FailedMessage;
 use expect\matcher\ReportableMatcher;

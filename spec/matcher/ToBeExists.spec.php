@@ -2,7 +2,7 @@
 
 use Assert\Assertion;
 use expect\FailedMessage;
-use expect\matcher\ToBeExists;
+use expect\filesystem\matcher\ToBeExists;
 
 describe('ToBeExists', function() {
     describe('#match', function () {
