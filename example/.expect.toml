@@ -1,0 +1,9 @@
+#
+# Expect configuration
+#
+
+packages = [
+  "expect\\filesystem\\FileSystem"
+]
+
+reporter = "\\expect\\reporter\\TextMessageReporter"
