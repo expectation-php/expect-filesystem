@@ -5,3 +5,62 @@ expect-filesystem
 [![HHVM Status](http://hhvm.h4cc.de/badge/expect/expect-filesystem.svg)](http://hhvm.h4cc.de/package/expect/expect-filesystem)
 [![Coverage Status](https://coveralls.io/repos/expectation-php/expect-filesystem/badge.svg?branch=master)](https://coveralls.io/r/expectation-php/expect-filesystem?branch=master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/expectation-php/expect-filesystem/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/expectation-php/expect-filesystem/?branch=master)
+
+Basic usage
+------------------------------------
+
+```php
+use expect\Expect;
+use expect\configurator\FileConfigurator;
+
+$configurator = new FileConfigurator(__DIR__ . '/config.toml');
+Expect::configure($configurator);
+
+Expect::that('log.txt')->toBeExists(); //pass
+Expect::that('not_found_log.txt')->toBeExists(); //failed
+```
+
+All of matcher
+------------------------------------
+
+### toBeExists
+
+```php
+Expect::that($file)->toBeExists();
+```
+
+### toBeReadable
+
+```php
+Expect::that($file)->toBeReadable();
+```
+
+### toBeWritable
+
+```php
+Expect::that($file)->toBeWritable();
+```
+
+### toBeExecutable
+
+```php
+Expect::that($file)->toBeExecutable();
+```
+
+### toBeDirectory
+
+```php
+Expect::that($file)->toBeDirectory();
+```
+
+### toBeFile
+
+```php
+Expect::that($file)->toBeFile();
+```
+
+### toBeMode
+
+```php
+Expect::that($file)->toBeMode(644);
+```
