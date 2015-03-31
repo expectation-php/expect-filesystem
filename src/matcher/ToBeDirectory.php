@@ -24,6 +24,7 @@ final class ToBeDirectory implements ReportableMatcher
     public function match($actual)
     {
         $this->actual = $actual;
+        return is_dir($this->actual);
     }
 
     /**

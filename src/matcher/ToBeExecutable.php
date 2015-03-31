@@ -24,6 +24,7 @@ final class ToBeExecutable implements ReportableMatcher
     public function match($actual)
     {
         $this->actual = $actual;
+        return is_executable($this->actual);
     }
 
     /**

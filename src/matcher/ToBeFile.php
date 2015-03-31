@@ -24,6 +24,7 @@ final class ToBeFile implements ReportableMatcher
     public function match($actual)
     {
         $this->actual = $actual;
+        return is_file($this->actual);
     }
 
     /**

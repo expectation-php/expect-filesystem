@@ -24,6 +24,7 @@ final class ToBeReadable implements ReportableMatcher
     public function match($actual)
     {
         $this->actual = $actual;
+        return is_readable($this->actual);
     }
 
     /**
