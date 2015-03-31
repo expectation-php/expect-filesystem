@@ -13,6 +13,8 @@ namespace expect\filesystem\matcher;
 
 use expect\FailedMessage;
 use expect\matcher\ReportableMatcher;
+use SplFileInfo;
+
 
 final class ToBeMode implements ReportableMatcher
 {
@@ -21,9 +23,28 @@ final class ToBeMode implements ReportableMatcher
      */
     private $actual;
 
+    /**
+     * @var int
+     */
+    private $expected;
+
+
+    private $actualPermission;
+
+
+    public function __construct($expected)
+    {
+        $this->expected = $expected;
+    }
+
     public function match($actual)
     {
         $this->actual = $actual;
+
+        $value = substr(sprintf('%o', fileperms($this->actual)), -4); //Example: 100444
+        $this->actualPermission = intval($value, 8);
+
+        return $this->actualPermission === $this->expected;
     }
 
     /**
