@@ -20,10 +20,10 @@ describe('ToBeWritable', function() {
         });
         context('when unmatch', function () {
             beforeEach(function () {
-                $this->tempFile = $this->makeFile($this->tempFile->getPath()); //Read only
+                $this->tempFile = $this->makeFile(0444); //Read only
             });
             it('return false', function () {
-                $result = $this->matcher->match(__DIR__);
+                $result = $this->matcher->match($this->tempFile->getPath());
                 Assertion::false($result);
             });
         });
