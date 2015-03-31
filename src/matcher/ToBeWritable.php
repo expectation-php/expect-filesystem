@@ -14,7 +14,7 @@ namespace expect\filesystem\matcher;
 use expect\FailedMessage;
 use expect\matcher\ReportableMatcher;
 
-final class ToBeExists implements ReportableMatcher
+final class ToBeWritable implements ReportableMatcher
 {
     /**
      * @var string
@@ -24,8 +24,6 @@ final class ToBeExists implements ReportableMatcher
     public function match($actual)
     {
         $this->actual = $actual;
-
-        return file_exists($this->actual);
     }
 
     /**
