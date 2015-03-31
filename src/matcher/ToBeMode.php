@@ -15,7 +15,16 @@ use expect\FailedMessage;
 use expect\matcher\ReportableMatcher;
 use SplFileInfo;
 
-
+/**
+ * Verify a file permissions
+ *
+ * <code>
+ * $matcher = new ToBeMode(644);
+ * $matcher->match('/path/to/file');
+ * </code>
+ * @package expect\filesystem\matcher
+ * @author Noritaka Horio <holy.shared.design@gmail.com>
+ */
 final class ToBeMode implements ReportableMatcher
 {
     /**
