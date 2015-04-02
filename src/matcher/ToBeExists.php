@@ -33,6 +33,9 @@ final class ToBeExists implements ReportableMatcher
      */
     public function reportFailed(FailedMessage $message)
     {
+        $message->appendText('Expected ')
+            ->appendValue($this->actual)
+            ->appendText(' to be exists');
     }
 
     /**
@@ -40,5 +43,8 @@ final class ToBeExists implements ReportableMatcher
      */
     public function reportNegativeFailed(FailedMessage $message)
     {
+        $message->appendText('Expected ')
+            ->appendValue($this->actual)
+            ->appendText(' not to be exists');
     }
 }
