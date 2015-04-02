@@ -24,4 +24,28 @@ describe('ToBeFile', function() {
             });
         });
     });
+    describe('#reportFailed', function () {
+        beforeEach(function () {
+            $this->tempDirectory = $this->makeDirectory();
+            $this->matcher = new ToBeFile();
+            $this->message = new FailedMessage();
+        });
+        it('report failed message', function() {
+            $this->matcher->match($this->tempDirectory->getPath());
+            $this->matcher->reportFailed($this->message);
+            Assertion::same((string) $this->message, "Expected '{$this->tempDirectory->getPath()}' to be file");
+        });
+    });
+    describe('#reportNegativeFailed', function () {
+        beforeEach(function () {
+            $this->tempFile = $this->makeFile();
+            $this->matcher = new ToBeFile();
+            $this->message = new FailedMessage();
+        });
+        it('report failed message', function() {
+            $this->matcher->match($this->tempFile->getPath());
+            $this->matcher->reportNegativeFailed($this->message);
+            Assertion::same((string) $this->message, "Expected '{$this->tempFile->getPath()}' not to be file");
+        });
+    });
 });
