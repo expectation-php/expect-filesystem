@@ -61,6 +61,11 @@ final class ToBeMode implements ReportableMatcher
      */
     public function reportFailed(FailedMessage $message)
     {
+        $message->appendText('Expected ')
+            ->appendValue($this->actual)
+            ->appendText(' to be ')
+            ->appendText('0' . decoct($this->expected))
+            ->appendText(' mode');
     }
 
     /**
@@ -68,5 +73,10 @@ final class ToBeMode implements ReportableMatcher
      */
     public function reportNegativeFailed(FailedMessage $message)
     {
+        $message->appendText('Expected ')
+            ->appendValue($this->actual)
+            ->appendText(' not to be ')
+            ->appendText('0' . decoct($this->expected))
+            ->appendText(' mode');
     }
 }
