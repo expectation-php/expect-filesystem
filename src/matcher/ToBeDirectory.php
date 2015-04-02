@@ -32,6 +32,9 @@ final class ToBeDirectory implements ReportableMatcher
      */
     public function reportFailed(FailedMessage $message)
     {
+        $message->appendText('Expected ')
+            ->appendValue($this->actual)
+            ->appendText(' to be directory');
     }
 
     /**
@@ -39,5 +42,8 @@ final class ToBeDirectory implements ReportableMatcher
      */
     public function reportNegativeFailed(FailedMessage $message)
     {
+        $message->appendText('Expected ')
+            ->appendValue($this->actual)
+            ->appendText(' not to be directory');
     }
 }
