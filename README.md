@@ -9,14 +9,10 @@ expect-filesystem
 Basic usage
 ------------------------------------
 
-Create a configuration file of **expect**.
+Create a configuration file of **expect**.  
 The format of the file is [toml](https://github.com/toml-lang/toml).
 
 ```toml
-#
-# Expect configuration
-#
-
 packages = [
   "expect\\filesystem\\FileSystem"
 ]
