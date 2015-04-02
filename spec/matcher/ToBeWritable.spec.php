@@ -4,7 +4,7 @@ use Assert\Assertion;
 use expect\FailedMessage;
 use expect\filesystem\matcher\ToBeWritable;
 
-describe('ToBeWritable', function() {
+describe('ToBeWritable', function () {
     describe('#match', function () {
         beforeEach(function () {
             $this->matcher = new ToBeWritable();
@@ -35,7 +35,7 @@ describe('ToBeWritable', function() {
             $this->matcher = new ToBeWritable();
             $this->message = new FailedMessage();
         });
-        it('report failed message', function() {
+        it('report failed message', function () {
             $this->matcher->match($this->tempFile->getPath());
             $this->matcher->reportFailed($this->message);
             Assertion::same((string) $this->message, "Expected '{$this->tempFile->getPath()}' to be writable");
@@ -47,7 +47,7 @@ describe('ToBeWritable', function() {
             $this->matcher = new ToBeWritable();
             $this->message = new FailedMessage();
         });
-        it('report failed message', function() {
+        it('report failed message', function () {
             $this->matcher->match($this->tempFile->getPath());
             $this->matcher->reportNegativeFailed($this->message);
             Assertion::same((string) $this->message, "Expected '{$this->tempFile->getPath()}' not to be writable");

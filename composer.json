@@ -33,7 +33,7 @@
     "scripts": {
         "test": "vendor/bin/robo spec:all",
         "coveralls": "vendor/bin/robo coveralls:upload",
-        "fixer": "php-cs-fixer fix src --config-file"
+        "fixer": "php-cs-fixer fix . --config-file"
     },
     "minimum-stability": "stable"
 }

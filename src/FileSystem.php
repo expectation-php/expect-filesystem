@@ -8,11 +8,10 @@
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
  */
-
 namespace expect\filesystem;
 
-use expect\MatcherRegistry;
 use expect\MatcherPackage;
+use expect\MatcherRegistry;
 use expect\PackageRegistrar;
 
 class FileSystem implements PackageRegistrar

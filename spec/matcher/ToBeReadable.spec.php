@@ -4,7 +4,7 @@ use Assert\Assertion;
 use expect\FailedMessage;
 use expect\filesystem\matcher\ToBeReadable;
 
-describe('ToBeReadable', function() {
+describe('ToBeReadable', function () {
     describe('#match', function () {
         beforeEach(function () {
             $this->matcher = new ToBeReadable();
@@ -35,7 +35,7 @@ describe('ToBeReadable', function() {
             $this->matcher = new ToBeReadable();
             $this->message = new FailedMessage();
         });
-        it('report failed message', function() {
+        it('report failed message', function () {
             $this->matcher->match($this->tempFile->getPath());
             $this->matcher->reportFailed($this->message);
             Assertion::same((string) $this->message, "Expected '{$this->tempFile->getPath()}' to be readable");
@@ -47,7 +47,7 @@ describe('ToBeReadable', function() {
             $this->matcher = new ToBeReadable();
             $this->message = new FailedMessage();
         });
-        it('report failed message', function() {
+        it('report failed message', function () {
             $this->matcher->match($this->tempFile->getPath());
             $this->matcher->reportNegativeFailed($this->message);
             Assertion::same((string) $this->message, "Expected '{$this->tempFile->getPath()}' not to be readable");

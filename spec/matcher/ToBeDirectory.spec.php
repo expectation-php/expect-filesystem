@@ -4,7 +4,7 @@ use Assert\Assertion;
 use expect\FailedMessage;
 use expect\filesystem\matcher\ToBeDirectory;
 
-describe('ToBeDirectory', function() {
+describe('ToBeDirectory', function () {
     describe('#match', function () {
         beforeEach(function () {
             $this->matcher = new ToBeDirectory();
@@ -30,7 +30,7 @@ describe('ToBeDirectory', function() {
             $this->matcher = new ToBeDirectory();
             $this->message = new FailedMessage();
         });
-        it('report failed message', function() {
+        it('report failed message', function () {
             $this->matcher->match($this->tempFile->getPath());
             $this->matcher->reportFailed($this->message);
             Assertion::same((string) $this->message, "Expected '{$this->tempFile->getPath()}' to be directory");
@@ -42,7 +42,7 @@ describe('ToBeDirectory', function() {
             $this->matcher = new ToBeDirectory();
             $this->message = new FailedMessage();
         });
-        it('report failed message', function() {
+        it('report failed message', function () {
             $this->matcher->match($this->tempDirectory->getPath());
             $this->matcher->reportNegativeFailed($this->message);
             Assertion::same((string) $this->message, "Expected '{$this->tempDirectory->getPath()}' not to be directory");

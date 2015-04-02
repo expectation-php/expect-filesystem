@@ -6,7 +6,7 @@ use expect\filesystem\FileSystem;
 use Prophecy\Argument;
 use Prophecy\Prophet;
 
-describe('FileSystem', function() {
+describe('FileSystem', function () {
     describe('#registerTo', function () {
         beforeEach(function () {
             $this->prophet = new Prophet();
@@ -18,7 +18,7 @@ describe('FileSystem', function() {
             $this->registry = $registry->reveal();
             $this->fileSystem = new FileSystem();
         });
-        it('register file system package', function() {
+        it('register file system package', function () {
             $this->fileSystem->registerTo($this->registry);
             $this->prophet->checkPredictions();
         });
