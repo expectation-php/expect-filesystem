@@ -2,8 +2,8 @@
 
 use cloak\peridot\CloakPlugin;
 use Evenement\EventEmitterInterface;
-use Peridot\Reporter\Dot\DotReporterPlugin;
 use holyshared\peridot\temporary\TemporaryPlugin;
+use Peridot\Reporter\Dot\DotReporterPlugin;
 
 return function (EventEmitterInterface $emitter) {
     if (defined('HHVM_VERSION') === false) {

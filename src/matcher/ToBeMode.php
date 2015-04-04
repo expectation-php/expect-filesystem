@@ -8,7 +8,6 @@
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
  */
-
 namespace expect\filesystem\matcher;
 
 use expect\FailedMessage;
@@ -22,7 +21,7 @@ use SplFileInfo;
  * $matcher = new ToBeMode(644);
  * $matcher->match('/path/to/file');
  * </code>
- * @package expect\filesystem\matcher
+ *
  * @author Noritaka Horio <holy.shared.design@gmail.com>
  */
 final class ToBeMode implements ReportableMatcher
@@ -37,9 +36,7 @@ final class ToBeMode implements ReportableMatcher
      */
     private $expected;
 
-
     private $actualPermission;
-
 
     public function __construct($expected)
     {
@@ -61,6 +58,11 @@ final class ToBeMode implements ReportableMatcher
      */
     public function reportFailed(FailedMessage $message)
     {
+        $message->appendText('Expected ')
+            ->appendValue($this->actual)
+            ->appendText(' to be ')
+            ->appendText('0' . decoct($this->expected))
+            ->appendText(' mode');
     }
 
     /**
@@ -68,5 +70,10 @@ final class ToBeMode implements ReportableMatcher
      */
     public function reportNegativeFailed(FailedMessage $message)
     {
+        $message->appendText('Expected ')
+            ->appendValue($this->actual)
+            ->appendText(' not to be ')
+            ->appendText('0' . decoct($this->expected))
+            ->appendText(' mode');
     }
 }
