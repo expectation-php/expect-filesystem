@@ -5,6 +5,7 @@ expect-filesystem
 [![HHVM Status](http://hhvm.h4cc.de/badge/expect/expect-filesystem.svg)](http://hhvm.h4cc.de/package/expect/expect-filesystem)
 [![Coverage Status](https://coveralls.io/repos/expectation-php/expect-filesystem/badge.svg?branch=master)](https://coveralls.io/r/expectation-php/expect-filesystem?branch=master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/expectation-php/expect-filesystem/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/expectation-php/expect-filesystem/?branch=master)
+[![Dependency Status](https://www.versioneye.com/user/projects/551feb9a971f78433900033c/badge.svg?style=flat)](https://www.versioneye.com/user/projects/551feb9a971f78433900033c)
 
 Basic usage
 ------------------------------------
