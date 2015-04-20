@@ -12,7 +12,8 @@
     ],
     "license": "MIT",
     "require": {
-        "expect/expect": "~0.5"
+        "php": ">=5.4.0",
+        "expect/expect": "~0.6"
     },
     "require-dev": {
         "peridot-php/peridot": "~1.15",
