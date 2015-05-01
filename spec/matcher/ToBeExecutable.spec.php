@@ -4,7 +4,7 @@ use Assert\Assertion;
 use expect\FailedMessage;
 use expect\filesystem\matcher\ToBeExecutable;
 
-describe('ToBeExecutable', function () {
+describe(ToBeExecutable::class, function () {
     describe('#match', function () {
         beforeEach(function () {
             $this->matcher = new ToBeExecutable();

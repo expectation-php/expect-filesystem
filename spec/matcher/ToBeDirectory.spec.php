@@ -4,7 +4,7 @@ use Assert\Assertion;
 use expect\FailedMessage;
 use expect\filesystem\matcher\ToBeDirectory;
 
-describe('ToBeDirectory', function () {
+describe(ToBeDirectory::class, function () {
     describe('#match', function () {
         beforeEach(function () {
             $this->matcher = new ToBeDirectory();
