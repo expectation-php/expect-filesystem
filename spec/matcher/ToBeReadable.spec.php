@@ -4,7 +4,7 @@ use Assert\Assertion;
 use expect\FailedMessage;
 use expect\filesystem\matcher\ToBeReadable;
 
-describe('ToBeReadable', function () {
+describe(ToBeReadable::class, function () {
     describe('#match', function () {
         beforeEach(function () {
             $this->matcher = new ToBeReadable();
