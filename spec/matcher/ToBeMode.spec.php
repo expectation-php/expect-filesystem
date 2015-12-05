@@ -4,7 +4,7 @@ use Assert\Assertion;
 use expect\FailedMessage;
 use expect\filesystem\matcher\ToBeMode;
 
-describe('ToBeMode', function () {
+describe(ToBeMode::class, function () {
     describe('#match', function () {
         beforeEach(function () {
             $this->matcher = new ToBeMode(0644);

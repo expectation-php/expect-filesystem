@@ -3,16 +3,18 @@
 use Assert\Assertion;
 use expect\FailedMessage;
 use expect\filesystem\FileSystem;
+use expect\MatcherRegistry;
+use expect\package\MatcherClass;
 use Prophecy\Argument;
 use Prophecy\Prophet;
 
-describe('FileSystem', function () {
+describe(FileSystem::class, function () {
     describe('#registerTo', function () {
         beforeEach(function () {
             $this->prophet = new Prophet();
 
-            $registry = $this->prophet->prophesize('expect\MatcherRegistry');
-            $registry->register(Argument::type('expect\package\MatcherClass'))
+            $registry = $this->prophet->prophesize(MatcherRegistry::class);
+            $registry->register(Argument::type(MatcherClass::class))
                 ->shouldBeCalled();
 
             $this->registry = $registry->reveal();
